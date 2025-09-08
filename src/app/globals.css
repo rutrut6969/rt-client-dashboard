@@ -1,0 +1,16 @@
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto Sans',Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';background:#F8F9FB;color:#2B2E34}
+.nav{position:sticky;top:0;background:#1F3A93;color:white;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 2px 8px rgba(0,0,0,.1);z-index:10}
+.nav a{color:white;text-decoration:none;margin-right:12px}
+.nav .brand a{font-weight:600}
+.container{max-width:1000px;margin:24px auto;padding:0 16px}
+.card{background:white;border:1px solid #E1E3E8;border-radius:10px;padding:16px;box-shadow:0 1px 6px rgba(0,0,0,.06);}
+.btn{display:inline-block;border:none;padding:10px 14px;border-radius:8px;background:#3DBE8B;color:#fff;cursor:pointer}
+.btn.secondary{background:#2B2E34}
+.input, select, textarea{width:100%;padding:10px;border:1px solid #E1E3E8;border-radius:8px;margin:6px 0 14px;background:white}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px solid #E1E3E8;padding:10px;text-align:left}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#E1E3E8}
+.header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.searchrow{display:flex;gap:8px;margin:8px 0}
+small.mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;color:#666}

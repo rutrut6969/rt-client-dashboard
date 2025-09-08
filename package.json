@@ -1,0 +1,26 @@
+{
+  "name": "rutledge-client-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "postinstall": "prisma generate",
+    "prisma:push": "prisma db push",
+    "seed": "node scripts/seed.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "5.16.2",
+    "bcryptjs": "2.4.3",
+    "next": "14.2.5",
+    "next-auth": "5.0.0-beta.25",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "prisma": "5.16.2",
+    "typescript": "5.5.4"
+  }
+}

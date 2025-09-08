@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ClientStatus {
+  NEW
+  CONTACTED
+  INTERESTED
+  FOLLOW_UP
+  IN_DISCUSSION
+  WON
+  LOST
+  ON_HOLD
+}
+
+enum ContactMethod {
+  NONE
+  EMAIL
+  PHONE
+  SMS
+  IN_PERSON
+  SOCIAL_DM
+}
+
+model User {
+  id        String  @id @default(cuid())
+  email     String  @unique
+  name      String?
+  password  String
+  role      String  @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Client {
+  id        String  @id @default(cuid())
+  businessName String
+  contactName  String?
+  phone        String?
+  email        String?
+  websiteUrl   String?
+  socialLinks  Json?
+  leadSource   String?
+  status       ClientStatus @default(NEW)
+  contacted    Boolean @default(false)
+  contactMethod ContactMethod @default(NONE)
+  interested   Boolean @default(false)
+  followUpNeeded Boolean @default(false)
+  lastContactedAt DateTime?
+  nextFollowUpAt DateTime?
+  projectScope  String?
+  websiteNotes  String?
+  budgetRange   String?
+  priority      Int? // 1 (highest) .. 5 (lowest)
+  tags          String[]
+  address       String?
+  city          String?
+  state         String?
+  country       String?
+  timezone      String?
+  hostingPlan   String? // e.g., Self-hosted, Rutledge Managed
+  maintenancePlan String? // e.g., None, Basic, Pro
+  decisionTimeline String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ownerId   String?
+  owner     User? @relation(fields: [ownerId], references: [id])
+}

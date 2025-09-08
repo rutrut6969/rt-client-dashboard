@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/client-dashboard",
+      "destination": "rt-client-dashboard-lake.vercel.app"
+    },
+    {
+      "source": "/client-dashboard/:path*",
+      "destination": "rt-client-dashboard-lake.vercel.app/:path*"
+    }
+  ]
+}
